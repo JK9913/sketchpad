@@ -46,14 +46,26 @@ createGrid(16);
 
 // Add eventlistener to button
 // Should generate new grid with entered amount of cells
+const btnDiv = document.querySelector('.btn');
 const button = document.querySelector('button')
 const numberField = document.querySelector('input')
+
 button.addEventListener('click', () => {
     console.log(numberField);
-    if (!(numberField.value === null) && !(numberField.value === 0)) {
+    if (!(numberField.value === null) && !(numberField.value <= 0) && !(numberField.value > 100)) {
         console.log('Creating grid...');
+        if (Array.from(btnDiv.children).toString().includes("p")) {
+            const text = document.querySelector('p');
+            btnDiv.removeChild(text);
+        };
         deleteGrid();
         createGrid(numberField.value);
+    } else {
+        const failText = document.createElement('p');
+        failText.textContent = "Value must be less than or equals to 100, and cannot be less than or equals to 0.\nOnly Numbered valeus are accepted.";
+        failText.style.color = 'red';
+        btnDiv.insertBefore(failText, button);
+        numberField.value = null;
     }
 })
 
