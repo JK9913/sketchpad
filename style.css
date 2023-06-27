@@ -1,0 +1,34 @@
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 600px;
+    height: 600px;
+    max-width: 1000px;
+    max-height: 1000px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 1px;
+    align-items: stretch;
+}
+
+.squares {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    flex: 1;
+}
+
+.square{
+    border-style: solid;
+    border-color: black;
+    border-radius: 1px;
+    align-self: stretch;
+    flex: 1;
+}
+
+.hovered {
+    background-color: black;
+}
