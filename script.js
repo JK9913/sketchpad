@@ -54,7 +54,8 @@ button.addEventListener('click', () => {
     console.log(numberField);
     if (!(numberField.value === null) && !(numberField.value <= 0) && !(numberField.value > 100)) {
         console.log('Creating grid...');
-        if (Array.from(btnDiv.children).toString().includes("p")) {
+        console.log(Array.from(btnDiv.children));
+        if (document.querySelector('p')) {
             const text = document.querySelector('p');
             btnDiv.removeChild(text);
         };
